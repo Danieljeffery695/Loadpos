@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoadPos</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- animated button links -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Dancing+Script:wght@500&family=Lobster&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+    <!-- font sizes  -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <!-- font awesome icons  -->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <!-- leaflet css linking -->
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+
+    <!-- leaflet linking here -->
+
+    <!-- leaflet routing  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <!-- leaflet routing  -->
+    <script defer src="index.js"></script>
+    <!-- javascript linking here -->
+  </head>
+  <body class="the-body">
+    <div class="standing-first">
+      <div class="logo">
+        <img src="https://cdn.pixabay.com/photo/2015/11/16/16/41/web-1045994_960_720.jpg" alt="log0" class="logo-img">
+      </div>
+      <i class="fa-solid fa-xmark" id="nav-cancel-x"></i>
+    <div class="nav-icon">
+      <i class="fa-solid fa-bars" id="nav-bar-icon"></i> 
+        <ul class="nav-bar">
+          <li><a href="#Introduction">Introduction</a></li>
+          <li><a href="#Map" class="nav-map">Maps and weather</a></li>
+          <li><a href="#Footer">Footer</a></li>
+        </ul>
+      </nav>
+  </div>  
+    </div>
+    <div class=" header-container">
+
+      <header id="Introduction">
+        <div class="header-flex header__div">
+        <div>
+          <h1>We the developer <br> welcome the visitor <br> and wish <br> you the best <br> experience <br> while exploring LOADPOS <br>
+            <img src="https://images.unsplash.com/photo-1498354178607-a79df2916198?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8MjN8fG1hcHxlbnwwfHx8fDE2ODMxMDk5NTc&ixlib=rb-4.0.3&q=80&w=400"
+            alt="some pics" class="img imss"> 
+            <img src="https://images.unsplash.com/photo-1516503424803-708327384b90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8MjV8fG1hcHxlbnwwfHx8fDE2ODMxMDk5NTc&ixlib=rb-4.0.3&q=80&w=400"
+            alt="some pics" class="img imsss">
+          </h1>
+        </div>
+        <div class="countrys container__api">
+          <!-- <img src="" alt="country" class="border--country">
+          <div class="countries">
+            
+            <article class="country">
+              <img class="country__img" src=""/>
+              <div class="country__data">
+                <h3 class="country__name">COUNTRY</h3>
+                <h4 class="country__region">REGION</h4>
+                <p class="country__row"><span>👫</span>POP people</p>
+                <p class="country__row"><span>🗣️</span>LANG</p>
+                <p class="country__row"><span>💰</span>CUR</p>
+              </div>
+            </article>
+           
+          </div> -->
+        </div>
+      </div>
+    </header>
+  </div>
+    <main>
+      <section id="Map" class="first--section">
+        <h2 class="animate__animated animate__backInLeft">Get Your Current location through our map and weather Forecast down here</h2>
+        <div class="map--flex">
+            <div class="leaplet--map" id="map"> </div>
+            <div class="weather-api__container">
+              <div class="weather-flex">
+
+                <div class="left-position">
+                  <div class="div-left_icon">
+                    <i class="fa-solid fa-cloud left-icon"></i>
+                  </div>
+                  <h3> <span class="data-current-temp">31&deg;</span> </h3>
+                </div>
+                <div class="right-position">
+                <div class="info-group">
+                  <h3 class="label">High <br> <span class="spannie span1">32&deg;</span></h3>
+                  <h3 class="label">Fl High <br> <span class="spannie span2">27&deg;</span></h3>
+                  <h3 class="label">Wind <br> <span class="spannie span3">9mph</span></h3>
+                </div>
+                <div class="info-group1">
+                  <h3 class="label">Low <br> <span class="spannie span4">19&deg;</span></h3>
+                  <h3 class="label">FL low <br> <span class="spannie span5">12&deg;</span></h3>
+                  <h3 class="label">Precep <br> <span class="spannie span6">0.1m</span></h3>
+                </div>
+              </div>
+            </div>
+            <div class="weekly-days">
+              <div class="weeklydays-top">
+                <div class="days">
+                  <i class="fa-solid fa-cloud"></i>
+                   <h4 class="daily-formatter">Monday</h4>
+                   <div>
+                     <div class="monday-time-temp">32&deg;</div>
+                   </div>
+                </div>
+                <div class="days">
+                  <i class="fa-solid fa-cloud"></i>
+                   <h4 class="daily-formatter">Tuesday</h4>
+                  <div class="tuesday-time-temp">32&deg;</div>
+                </div>
+                <div class="days">
+                  <i class="fa-solid fa-cloud"></i>
+                   <h4 class="daily-formatter">Wednesday</h4>
+                  <div class="wednesday-time-temp">32&deg;</div>
+                </div>
+              </div>
+              <div class="weeklydays-bottom">
+              <div class="days">
+                <i class="fa-solid fa-cloud"></i>
+                 <h4 class="daily-formatter">Thursday</h4>
+                <div class="thursday-time-temp">32&deg;</div>
+              </div>
+              <div class="days">
+                <i class="fa-solid fa-cloud"></i>
+                 <h4 class="daily-formatter">Friday</h4>
+                <div class="friday-time-temp">32&deg;</div>
+              </div>
+            </div>
+            <div class="weeklydays-bottom">
+              <div class="days">
+                <i class="fa-solid fa-cloud"></i>
+                 <h4 class="daily-formatter">Saturday</h4>
+                <div class="saturday-time-temp">32&deg;</div>
+              </div>
+              <div class="days">
+                <i class="fa-solid fa-cloud"></i>
+                 <h4 class="daily-formatter">Sunday</h4>
+                <div class="sunday-time-temp">32&deg;</div>
+              </div>
+            </div>
+          </div>
+            <div class="weather-table">
+              <table class="hour-section">
+                <tbody data-hour-section>
+                  <tr class="hour-row">
+                    <td>
+                      <div class="group-info">
+                        <div class="lebel">Thursday</div>
+                        <div>3 pm</div>
+                      </div>
+                    </td>
+                    <td>
+                   <i class="fa-solid fa-cloud"></i>
+                    </td>
+                    <td>
+                      <div class="group-info">
+                        <div class="lebel">Temp</div>
+                        <div>32&deg;</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="group-info">
+                        <div class="lebel">FL Temp</div>
+                        <div>29&deg;</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="group-info">
+                        <div class="lebel">Wind</div>
+                        <div>25&deg;</div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="group-info">
+                        <div class="lebel">precip</div>
+                        <div>0in</div>
+                      </div>
+                    </td>
+                    </tr>
+
+                    <tr class="hour-row"> 
+                      <td>
+                        <div class="group-info">
+                          <div class="lebel">Thursday</div>
+                          
+                          <div>3 pm</div>
+                        </div>
+                      </td>
+                      <td>
+                        <i class="fa-solid fa-cloud"></i>
+                      </td>
+                      <td>
+                        <div class="group-info">
+                          <div class="lebel">Temp</div>
+                          <div>32&deg;</div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="group-info">
+                          <div class="lebel">FL Temp</div>
+                          <div>29&deg;</div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="group-info">
+                          <div class="lebel">Wind</div>
+                          <div>25&deg;</div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="group-info">
+                          <div class="lebel">precip</div>
+                          <div>0in</div>
+                        </div>
+                      </td>
+                    </tr>
+                      
+                      <tr class="hour-row"> 
+
+                        <td>
+                          <div class="group-info">
+                            <div class="lebel">Thursday</div>
+                            <div>3 pm</div>
+                          </div>
+                        </td>
+                        <td>
+                          <i class="fa-solid fa-cloud"></i>
+                        </td>
+                        <td>
+                          <div class="group-info">
+                            <div class="lebel">Temp</div>
+                            <div>32&deg;</div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="group-info">
+                            <div class="lebel">FL Temp</div>
+                            <div>29&deg;</div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="group-info">
+                            <div class="lebel">Wind</div>
+                            <div>25&deg;</div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="group-info">
+                            <div class="lebel">precip</div>
+                            <div>0in</div>
+                          </div>
+                        </td>
+                      </tr>
+
+                        <tr class="hour-row">  
+
+                          <td>
+                            <div class="group-info">
+                              <div class="lebel">Thursday</div>
+                              <div>3 pm</div>
+                            </div>
+                          </td>
+                          <td>
+                            <i class="fa-solid fa-cloud"></i>
+                          </td>
+                          <td>
+                            <div class="group-info">
+                              <div class="lebel">Temp</div>
+                              <div>32&deg;</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="group-info">
+                              <div class="lebel">FL Temp</div>
+                              <div>29&deg;</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="group-info">
+                              <div class="lebel">Wind</div>
+                              <div>25&deg;</div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="group-info">
+                              <div class="lebel">precip</div>
+                              <div>0in</div>
+                            </div>
+                          </td>
+                        </tr>
+                          
+                          <tr class="hour-row"> 
+                            
+                            <td>
+                              <div class="group-info">
+                                <div class="lebel">Thursday</div>
+                                <div>3 pm</div>
+                              </div>
+                            </td>
+                            <td>
+                              <i class="fa-solid fa-cloud"></i>
+                            </td>
+                            <td>
+                              <div class="group-info">
+                                <div class="lebel">Temp</div>
+                                <div>32&deg;</div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="group-info">
+                                <div class="lebel">FL Temp</div>
+                                <div>29&deg;</div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="group-info">
+                                <div class="lebel">Wind</div>
+                                <div>25&deg;</div>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="group-info">
+                                <div class="lebel">precip</div>
+                                <div>0in</div>
+                              </div>
+                            </td>
+                          </tr>
+                            
+                            <tr class="hour-row">  
+
+                              <td>
+                                <div class="group-info">
+                                  <div class="lebel">Thursday</div>
+                                  <div>3 pm</div>
+                                </div>
+                              </td>
+                              <td>
+                                <i class="fa-solid fa-cloud"></i>
+                              </td>
+                              <td>
+                                <div class="group-info">
+                                  <div class="lebel">Temp</div>
+                                  <div>32&deg;</div>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="group-info">
+                                  <div class="lebel">FL Temp</div>
+                                  <div>29&deg;</div>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="group-info">
+                                  <div class="lebel">Wind</div>
+                                  <div>25&deg;</div>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="group-info">
+                                  <div class="lebel">precip</div>
+                                  <div>0in</div>
+                                </div>
+                              </td>
+                            </tr>
+
+                              <tr class="hour-row"> 
+
+                                <td>
+                                  <div class="group-info">
+                                    <div class="lebel">Thursday</div>
+                                    <div>3 pm</div>
+                                  </div>
+                                </td>
+                                <td>
+                                  <i class="fa-solid fa-cloud"></i>
+                                </td>
+                                <td>
+                                  <div class="group-info">
+                                    <div class="lebel">Temp</div>
+                                    <div>32&deg;</div>
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="group-info">
+                                    <div class="lebel">FL Temp</div>
+                                    <div>29&deg;</div>
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="group-info">
+                                    <div class="lebel">Wind</div>
+                                    <div>25&deg;</div>
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="group-info">
+                                    <div class="lebel">precip</div>
+                                    <div>0in</div>
+                                  </div>
+                                </td>
+                              </tr>
+                                
+                                <tr class="hour-row"> 
+
+                                  <td>
+                                    <div class="group-info">
+                                      <div class="lebel">Thursday</div>
+                                      <div>3 pm</div>
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <i class="fa-solid fa-cloud"></i>
+                                  </td>
+                                  <td>
+                                    <div class="group-info">
+                                      <div class="lebel">Temp</div>
+                                      <div>32&deg;</div>
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div class="group-info">
+                                      <div class="lebel">FL Temp</div>
+                                      <div>29&deg;</div>
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div class="group-info">
+                                      <div class="lebel">Wind</div>
+                                      <div>25&deg;</div>
+                                    </div>
+                                  </td>
+                                  <td>
+                                    <div class="group-info">
+                                      <div class="lebel">precip</div>
+                                      <div>0in</div>
+                                    </div>
+                                  </td>
+                                </tr>
+                                  
+
+
+
+                </tbody>
+              </table>
+            </div>
+             </div>  
+            </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="Footer" class="footer-1">
+     <div class="footer-container">
+      <div class="footer-contact">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a> 
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a> 
+        <a href="#"><i class="fa-brands fa-discord"></i></a> 
+        <a href="#"><i class="fa-brands fa-google"></i></a> 
+      </div>
+      <div class="footer-info">
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+
+      </div>
+      <div class="footer-info">
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+
+      </div>
+      <div class="footer-info">
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+
+      </div>
+      <div class="footer-info">
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+
+      </div>
+      <div class="footer-info">
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+
+      </div>
+      <div class="footer-info">
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+        <p><a href="#">Lorem ipsum, dolor sit</a></p>
+
+      </div>
+     </div>
+    </footer>
+
+  </body>
+</html>
